@@ -1,5 +1,4 @@
 # Belief Net Independence Solver
-> Determine independence of features given a belief net and a list of given nodes
 
 This little toy program accepts as input a belief net and then determines if
 two nodes are independent, subject to a list of given values.
@@ -11,6 +10,11 @@ ANY path survives after removing the forbidden triples, then the nodes can
 "share" information, and are not independent.
 
 For example, in the following belief net:
+
+```
+A -> B;
+B -> C;
+```
 
 <img src='https://g.gravizo.com/svg?
   digraph G {
@@ -28,6 +32,12 @@ But if B is given then A and C _are_ independent:
     B -> C;
     B [fillcolor=grey, style=filled];
   }'/>
+
+```
+A -> B;
+B -> C;
+B.given = True;
+```
 
 In code, this would look like:
 
