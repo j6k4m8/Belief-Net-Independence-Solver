@@ -16,28 +16,19 @@ A -> B;
 B -> C;
 ```
 
-<img src='https://g.gravizo.com/svg?
-  digraph G {
-    A -> B;
-    B -> C;
-  }'/>
+<img src='https://g.gravizo.com/svg?digraph G {  rankdir=LR; A -> B;  B -> C;}'/>
 
 A and C are NOT independent.
 
 But if B is given then A and C _are_ independent:
-
-<img src='https://g.gravizo.com/svg?
-  digraph G {
-    A -> B;
-    B -> C;
-    B [fillcolor=grey, style=filled];
-  }'/>
 
 ```
 A -> B;
 B -> C;
 B.given = True;
 ```
+
+<img src='https://g.gravizo.com/svg?digraph G {  rankdir=LR; A -> B;  B -> C;  B [fillcolor=grey, style=filled];}'/>
 
 In code, this would look like:
 
