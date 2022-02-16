@@ -16,7 +16,11 @@ A -> B;
 B -> C;
 ```
 
-<img src='https://g.gravizo.com/svg?digraph G {  rankdir=LR; A -> B;  B -> C;}'/>
+```mermaid
+graph LR;
+A((A)) --> B((B));
+B((B)) --> C((C));
+```
 
 A and C are NOT independent.
 
@@ -28,7 +32,12 @@ B -> C;
 B.given = True;
 ```
 
-<img src='https://g.gravizo.com/svg?digraph G {  rankdir=LR; A -> B;  B -> C;  B [fillcolor=grey, style=filled];}'/>
+```mermaid
+graph LR;
+A((A)) --> B((B));
+B((B)) --> C((C));
+style B fill:#fccc
+```
 
 In code, this would look like:
 
